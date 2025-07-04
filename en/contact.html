@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Mohamed</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="icon" href="../images/favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <button id="themeToggle">🌙</button>
+
+  <header>
+    <h1>Contact</h1>
+    <p>Feel free to leave me a message!</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projets.html">Projects</a>
+      <span>Contact</span>
+    </nav>
+    <div class="lang-switch">
+      🌐 Language: <span>EN</span> |
+      <a href="../fr/contact.html">FR</a> |
+      <a href="../ar/contact.html">AR</a>
+    </div>
+  </header>
+
+  <section class="contact-form fade-in">
+    <form id="contact-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+
+      <!-- Hidden field for date -->
+      <input type="hidden" id="date" name="date" />
+
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Mohamed | Student Portfolio</p>
+  </footer>
+
+  <button id="backToTop">⬆️</button>
+
+  <!-- Shared JS -->
+  <script src="../script.js"></script>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    // EmailJS initialization
+    (function () {
+      emailjs.init("_8-lzjO9494U2DqWi"); // Replace with your actual public key if needed
+    })();
+
+    // EmailJS form submission
+    document.querySelector("#contact-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Add current date to the hidden field
+      document.querySelector("#date").value = new Date().toLocaleString("en-US");
+
+      emailjs.sendForm("service_ukm4d0a", "template_sjm477p", this)
+        .then(() => {
+          alert("✅ Message sent successfully!");
+          this.reset();
+        }, (err) => {
+          alert("❌ Error sending message!");
+          console.error(err);
+        });
+    });
+  </script>
+</body>
+
+</html>

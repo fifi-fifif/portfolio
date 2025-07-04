@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Mohamed</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="icon" href="../images/favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <button id="themeToggle">🌙</button>
+
+  <header>
+    <h1>Contact</h1>
+    <p>N'hésite pas à me laisser un message !</p>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="projets.html">Projets</a>
+      <span>Contact</span>
+    </nav>
+    <div class="lang-switch">
+      🌐 Langue : <span>FR</span> |
+      <a href="../en/contact.html">EN</a> |
+      <a href="../ar/contact.html">AR</a>
+    </div>
+  </header>
+
+  <section class="contact-form fade-in">
+    <form id="contact-form">
+      <label for="name">Nom</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+
+      <!-- Champ caché pour la date -->
+      <input type="hidden" id="date" name="date" />
+
+      <button type="submit">Envoyer</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Mohamed | Portfolio Étudiant</p>
+  </footer>
+
+  <button id="backToTop">⬆️</button>
+
+  <!-- JS commun -->
+  <script src="../script.js"></script>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    // Initialisation EmailJS
+    (function () {
+      emailjs.init("_8-lzjO9494U2DqWi"); // Remplace par ta vraie clé publique si besoin
+    })();
+
+    // Envoi du formulaire via EmailJS
+    document.querySelector("#contact-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Ajout de la date dans le champ caché
+      document.querySelector("#date").value = new Date().toLocaleString("fr-FR");
+
+      emailjs.sendForm("service_ukm4d0a", "template_sjm477p", this)
+        .then(() => {
+          alert("✅ Message envoyé avec succès !");
+          this.reset();
+        }, (err) => {
+          alert("❌ Erreur lors de l'envoi !");
+          console.error(err);
+        });
+    });
+  </script>
+</body>
+
+</html>
