@@ -1,108 +1,101 @@
 <!DOCTYPE html>
-<html lang="fr">
-  
-
+<html lang="fr" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio | Mohamed</title>
+  <title>Imène | Étudiante en Pharmacie</title>
   <link rel="stylesheet" href="../style.css" />
-  <link rel="icon" href="../images/favicon.png" type="image/png" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+ 
 </head>
 
 <body>
-  <button id="themeToggle">🌙</button>
-
   <header>
-    <h1>Mohamed</h1>
-    <p>Étudiant en Informatique & Développeur Web</p>
-    <nav>
-      <span>Accueil</span>
-      <a href="projets.html">Projets</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <div class="lang-switch">
-      🌐 Langue : <span>FR</span> |
-      <a href="../en/index.html">EN</a> |
-      <a href="../ar/index.html">AR</a>
+    <div class="container">
+      <h1>Imène</h1>
+      <nav>
+        <a href="#apropos">À propos</a>
+        <a href="#competences">Compétences</a>
+        <a href="#stages">Stages</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+        <button id="themeToggle">🌙</button>
+        <div class="lang-switch">
+          🌐 Langue : 
+          <span>FR</span> |
+          <a href="../en/index.html">EN</a> |
+          <a href="../ar/index.html">AR</a>
+        </div>
+      </nav>
     </div>
   </header>
 
-  <section class="hero fade-in">
-    <img src="../images/profile.png" alt="Photo de profil" class="profile-img" />
-    <h2 id="typedText"></h2>
-    <p>Je développe des applications web modernes, performantes et accessibles.</p>
-    <a href="../images/cv.pdf" class="btn" download>Télécharger mon CV</a>
+  <section class="hero">
+    <div class="container">
+      <img src="../images/profile.png" alt="Photo d’Imène" class="hero-img" />
+      <div class="hero-text">
+        <h2>Étudiante en Pharmacie</h2>
+        <p>Passionnée par la recherche médicale et l’innovation pharmaceutique.</p>
+        <a href="../images/cv-imene.pdf" class="btn" download>Télécharger mon CV</a>
+      </div>
+    </div>
   </section>
 
-  <section class="skills fade-in slide-up">
-    <h2>Compétences</h2>
-    <ul class="tech-list">
-      <li><img src="../images/html.png" alt="HTML" /> HTML</li>
-      <li><img src="../images/css.png" alt="CSS" /> CSS</li>
-      <li><img src="../images/js.png" alt="JS" /> JavaScript</li>
-      <li><img src="../images/py.png" alt="Python" /> Python</li>
-      <li><img src="../images/git.png" alt="Git" /> Git & GitHub</li>
-    </ul>
+  <section id="apropos" class="section">
+    <div class="container">
+      <h2>À propos</h2>
+      <p>Étudiante en 5e année de pharmacie, spécialisée en biopharmacie et recherche clinique.</p>
+    </div>
   </section>
 
-  <div class="about-grid fade-in slide-up">
-    <div class="about-block">
-      <h3>💼 Ce que je propose</h3>
-      <ul>
-        <li>🌐 Sites web modernes & responsives</li>
-        <li>⚙️ Intégration HTML / CSS / JS</li>
-        <li>🔐 Optimisation SEO & performance</li>
-        <li>🧠 Rédaction technique</li>
-        <li>🤝 Collaboration avec Git / GitHub</li>
-      </ul>
+  <section id="competences" class="section">
+    <div class="container">
+      <h2>Compétences</h2>
+      <div class="grid">
+        <div class="card">💊 Pharmacologie</div>
+        <div class="card">🧪 Chimie thérapeutique</div>
+        <div class="card">📊 Recherche clinique</div>
+        <div class="card">🧮 Analyse de données</div>
+      </div>
     </div>
-    <div class="about-block">
-      <h3>📜 Certifications</h3>
-      <ul>
-        <li>✔️ Responsive Web Design – freeCodeCamp</li>
-        <li>✔️ JavaScript – OpenClassrooms</li>
-        <li>✔️ Python – SoloLearn</li>
-      </ul>
-    </div>
-    <div class="about-block">
-      <h3>💖 Soft Skills</h3>
-      <ul>
-        <li>✨ Créativité</li>
-        <li>🤝 Esprit d'équipe</li>
-        <li>🧘‍♀️ Patience & rigueur</li>
-        <li>🧠 Curiosité & autonomie</li>
-      </ul>
-    </div>
-    <div class="about-block">
-      <h3>🛠️ Mes outils favoris</h3>
-      <ul>
-        <li>🖌️ Figma, Canva</li>
-        <li>🧩 VS Code, GitHub</li>
-        <li>📦 NPM, Vite</li>
-        <li>📱 Chrome DevTools</li>
-      </ul>
-    </div>
-    <div class="about-block stats">
-      <h3>📊 En chiffres</h3>
-      <p><strong>+10</strong> projets réalisés</p>
-      <p><strong>3</strong> langues parlées</p>
-      <p><strong>100%</strong> motivation</p>
-    </div>
-  </div>
+  </section>
 
-  <p class="cta">Tu veux collaborer avec moi ? <a href="contact.html">Contacte-moi ici !</a></p>
+  <section id="stages" class="section">
+    <div class="container">
+      <h2>Stages</h2>
+      <ul class="cert-list">
+        <li><strong>2024</strong> – Stage hospitalier, CHU Mustapha</li>
+        <li><strong>2023</strong> – Officine, Pharmacie El Amel</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="certifications" class="section">
+    <div class="container">
+      <h2>Certifications</h2>
+      <ul class="cert-list">
+        <li>✔️ Bonnes Pratiques Cliniques – ANSM</li>
+        <li>✔️ Recherche Biomédicale – FMP Alger</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>Email : <a href="mailto:imene.pharma@email.com">imene.pharma@email.com</a></p>
+      <div class="social-links">
+        <a href="#">LinkedIn</a> | <a href="#">Instagram</a>
+      </div>
+    </div>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Mohamed | Portfolio Étudiant</p>
+    <p>&copy; 2025 Imène | Étudiante en Pharmacie</p>
   </footer>
 
   <button id="backToTop">⬆️</button>
-
-  <!-- JS externe -->
-  <script src="../script.js"></script>
 </body>
-
 </html>
+ <script defer src="../script.js"></script>
